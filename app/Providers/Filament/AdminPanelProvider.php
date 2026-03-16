@@ -28,12 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('')
             ->login()
             ->passwordReset()
-            ->homeUrl(fn (): string => match (auth()->user()?->role) {
-                'admin'  => '/admin',
-                'editor' => '/admin/users',
-                'viewer' => '/admin',
-                default  => '/admin',
-            })
+            ->homeUrl('/')
             ->colors([
                 'primary' => Color::Amber,
             ])
